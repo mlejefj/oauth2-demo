@@ -19,10 +19,15 @@ The _logout_ functionality is not implemented. If the application is not behavin
 
 * Check the messages in the PHP server output. Are there any error messages?
 * The OAuth application in GitHub will allow you to revoke all user tokens
-* Session variables may persist on disk. You can destroy a session by deleting any session files: 
+* Session variables may persist on disk. You can destroy a session by deleting any session files.
 
-    rm /var/lib/php/sessions/*
+### Session files
 
 PHP can display the path to stored sessions with the following command:
 
     echo session_save_path();
+
+Assuming your session files are stored in `/var/lib/php/sessions`, the following should work:
+
+    rm /var/lib/php/sessions/*
+
